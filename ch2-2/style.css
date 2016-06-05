@@ -1,0 +1,13 @@
+@@charset "UTF-8";
+
+body{
+  background-color: :#EEFFFF;
+  font-size: 12pt;
+  margin: 3px;
+}
+
+h1{
+  background-color: #006600;
+  font-size: 18pt;
+  margin: 3px;
+}
