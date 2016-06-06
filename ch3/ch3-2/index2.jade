@@ -1,0 +1,23 @@
+docutype
+html
+  head
+    mata(charset="utf-8")
+    link(rel="stylesheet" , href="style.css")
+  body
+    h1= title
+    p= msg + '(' + form.myname +',' + form.mail + ',' + form.age +')'
+    form(method='post',action='/index2')
+      table
+        tr
+          td
+            input(type='text',name='myname',value=form.myname)
+        tr
+          td
+            input(type='text',name='mail',value=form.mail)
+        tr
+          td
+            input(type='text',name='age',value=form.age)
+        tr
+          td
+            input(type='submit')
+            
