@@ -5,6 +5,7 @@ var qs = require('querystring');
 var jade = require('jade');
 
 var index = fs.readFileSync('./index.jade','utf8');
+var index2 = fs.readFileSync('./index2.jade','utf8');
 var style = fs.readFileSync('./style.css','utf8');
 
 var datas = [];
@@ -15,8 +16,14 @@ server.listen(2222);
 
 function doRequest(req,res){
   var path = url.parse(req.url);
-  var fn = jade.compile(index);
-
+  var fn = jade.compile(index,{
+    filename: 'include',
+    rootpath: __dirname
+  });
+  var fn2 = jade.compile(index2,{
+    filename: 'include',
+    rootpath: __dirname
+  });
   switch(path.pathname){
     case '/':
       if(req.method == "POST"){
@@ -56,6 +63,11 @@ function doRequest(req,res){
       break;
     case '/favicon.ico':
       break;
+    case '/index2':
+      var tmp = fn();
+      res.setHeader('Content-Type','text/html');
+      res.write(tmp);
+      res.end();
     default:
       console.log(path.pathname);
       res.setHeader('Content-Type','text/plain');

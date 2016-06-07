@@ -10,3 +10,14 @@ h1{
   font-size: 55pt;
   padding:3px;
 }
+
+p.header{
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+p.footer{
+  font-size: 9pt;
+  text-align:right;
+  border-bottom: 1px solid #006600;
+}

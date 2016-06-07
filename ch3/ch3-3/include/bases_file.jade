@@ -1,0 +1,17 @@
+doctype
+html
+  meta(charset="utf-8")
+  title title
+  link(rel="stylesheet",href="style.css")
+body
+  h1
+    block title
+      |  title text.
+  p.header
+    block msg
+      |  message text.
+  block content
+    p content data.
+  p.footer
+    block footer
+      |  footer text.
